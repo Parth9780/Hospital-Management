@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthify Hospital a Good Tretment and Services Provide Get Visit and Book Your Family Health</title>
+    <link rel="icon" type="image/x-icon" href="/static/image/Favicon.png" />
+    <!-- Tailwind-CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- icons CDN -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap"
+        rel="stylesheet" />
+    <style>
+        ::placeholder {
+            color: #fff !important;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: gainsboro !important;
+            text-decoration: underline;
+        }
+
+        .otp-field {
+            flex-direction: row;
+            column-gap: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .otp-field input {
+            height: 45px;
+            width: 42px;
+            border-radius: 6px;
+            outline: none;
+            font-size: 1.125rem;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .otp-field input:focus {
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .otp-field input::-webkit-inner-spin-button,
+        .otp-field input::-webkit-outer-spin-button {
+            display: none;
+        }
+
+        .resend {
+            font-size: 12px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: black;
+            font-size: 12px;
+            text-align: right;
+            font-family: monospace;
+        }
+
+        .footer a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center mb-6 text-blue-600">Enter OTP</h1>
+        <p class="text-gray-600 text-center mb-6">We've sent a one-time password to your registered email address.</p>
+        <form action method="post">
+            {% csrf_token %}
+            <div class="otp-field mb-4">
+                <input type="number" name="otp_1" />
+                <input type="number" name="otp_2" disabled />
+                <input type="number" name="otp_3" disabled />
+                <input type="number" name="otp_4" disabled />
+                <input type="number" name="otp_5" disabled />
+                <input type="number" name="otp_6" disabled />
+            </div>
+            <button class="btn btn-primary mb-3">
+                Verify
+            </button>
+
+        </form>
+        <div class="mt-4 text-center">
+            <p class="text-gray-600">Didn't receive the OTP?</p>
+            <a href="#" class="text-blue-600 hover:underline">Resend OTP</a>
+        </div>
+    </div>
+    <script>
+        function PasswordReset() {
+            $('form.reset-password-form').on('submit', function (e) {
+                e.preventDefault();
+                $('.reset-form')
+                    .removeClass('d-block')
+                    .addClass('d-none');
+                $('.reset-confirmation').addClass('d-block');
+            });
+        }
+
+        window.addEventListener('load', function () {
+            PasswordReset();
+        });
+
+        const inputs = document.querySelectorAll(".otp-field > input");
+        const button = document.querySelector(".btn");
+
+        window.addEventListener("load", () => inputs[0].focus());
+        button.setAttribute("disabled", "disabled");
+
+        inputs[0].addEventListener("paste", function (event) {
+            event.preventDefault();
+
+            const pastedValue = (event.clipboardData || window.clipboardData).getData(
+                "text"
+            );
+            const otpLength = inputs.length;
+
+            for (let i = 0; i < otpLength; i++) {
+                if (i < pastedValue.length) {
+                    inputs[i].value = pastedValue[i];
+                    inputs[i].removeAttribute("disabled");
+                    inputs[i].focus;
+                } else {
+                    inputs[i].value = ""; // Clear any remaining inputs
+                    inputs[i].focus;
+                }
+            }
+        });
+
+        inputs.forEach((input, index1) => {
+            input.addEventListener("keyup", (e) => {
+                const currentInput = input;
+                const nextInput = input.nextElementSibling;
+                const prevInput = input.previousElementSibling;
+
+                if (currentInput.value.length > 1) {
+                    currentInput.value = "";
+                    return;
+                }
+
+                if (
+                    nextInput &&
+                    nextInput.hasAttribute("disabled") &&
+                    currentInput.value !== ""
+                ) {
+                    nextInput.removeAttribute("disabled");
+                    nextInput.focus();
+                }
+
+                if (e.key === "Backspace") {
+                    inputs.forEach((input, index2) => {
+                        if (index1 <= index2 && prevInput) {
+                            input.setAttribute("disabled", true);
+                            input.value = "";
+                            prevInput.focus();
+                        }
+                    });
+                }
+
+                button.classList.remove("active");
+                button.setAttribute("disabled", "disabled");
+
+                const inputsNo = inputs.length;
+                if (!inputs[inputsNo - 1].disabled && inputs[inputsNo - 1].value !== "") {
+                    button.classList.add("active");
+                    button.removeAttribute("disabled");
+
+                    return;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

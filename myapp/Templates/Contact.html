@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthify Hospital a Good Tretment and Services Provide Get Visit and Book Your Family Health</title>
+    <link rel="icon" type="image/x-icon" href="/static/image/Favicon.png" />
+    <!-- Tailwind-CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- icons CDN -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <section>
+        <header class="bg-teal-900 p-6">
+            <nav class="flex justify-between items-center w-[92%] mx-auto">
+                <div class="text-white">
+                    <h1 class="md:text-4xl text-3xl font-semibold font-serif">Healthify</h1>
+                </div>
+                <div
+                    class="nav-links duration-500 md:static absolute bg-teal-900 md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-6">
+                    <ul class="text-white md:items-center text-xl flex md:gap-12 gap-8 md:flex-row flex-col font-sans">
+                        <li><a class="hover:text-slate-400 hover:underline" href="/home">Home</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="/about">About</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="/services">Services</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="/appointment">Appointment</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex item-center gap-6">
+                    <div class="relative group">
+                        <button class="text-white text-lg ps-1 flex items-center">
+                            <ion-icon name="person-sharp" class="text-white mr-2"></ion-icon>
+                            {{ username }} !
+                            <ion-icon name="chevron-down-outline" class="text-white ml-1"></ion-icon>
+                        </button>
+                        <ul
+                            class="absolute right-0 top-full mt-2 w-48 bg-teal-800 rounded-md shadow-lg hidden group-hover:block">
+                            <li><a href="/update-profile"
+                                    class="block px-4 py-2 text-sm text-white hover:bg-teal-700">Update Profile</a></li>
+                            <li><a href="/logout"
+                                    class="block px-4 py-2 text-sm text-white hover:bg-teal-700">Logout</a></li>
+                        </ul>
+                    </div>
+                    <ion-icon onclick="ontoggleMenu(this)" name="menu-outline"
+                        class="text-3xl text-white cursor-pointer md:hidden"></ion-icon>
+                </div>
+            </nav>
+        </header>
+        <script>
+            const navLinks = document.querySelector('.nav-links')
+            function ontoggleMenu(e) {
+                e.name = e.name === 'close' ? 'menu' : 'close'
+                navLinks.classList.toggle('top-[10%]')
+            }
+        </script>
+    </section>
+    <!-- Why Choose Us Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-teal-900 mb-12">Why Choose Healthify Hospital?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <ion-icon name="medal-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-xl font-semibold mb-2">Expert Medical Team</h3>
+                    <p class="text-gray-600">Our highly skilled doctors and staff provide top-notch care with
+                        compassion.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <ion-icon name="medkit-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-xl font-semibold mb-2">Advanced Technology</h3>
+                    <p class="text-gray-600">We utilize state-of-the-art medical equipment for accurate diagnosis and
+                        treatment.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <ion-icon name="heart-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-xl font-semibold mb-2">Patient-Centered Care</h3>
+                    <p class="text-gray-600">Your comfort and well-being are our top priorities throughout your
+                        healthcare journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-teal-900 mb-12">Contact Us</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Contact Form -->
+                <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-teal-600 text-white font-bold py-2 px-4 rounded hover:bg-teal-700 transition duration-300">Send
+                            Message</button>
+                    </form>
+                    <!-- Added note section -->
+                    <div class="mt-4 text-sm text-gray-600">
+                        <p><strong>Note:</strong> We'll contact you shortly after receiving your message. Thank you for
+                            reaching out!</p>
+                    </div>
+                </div>
+                <!-- Google Map -->
+                <div class="h-96 rounded-lg overflow-hidden shadow-md">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236208.76912748493!2d70.762496!3d22.324838399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c98ac71cdf0f%3A0x76dd15cfbe93ad3b!2sRajkot%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1727585293820!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/+917600472916" target="_blank"
+        class="fixed right-4 bottom-4 z-50 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 transition duration-300">
+        <ion-icon name="logo-whatsapp" class="text-3xl"></ion-icon>
+    </a>
+    <!-- Footer Section -->
+    <footer class="bg-teal-900 text-white py-10">
+        <div class="w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Healthify</h2>
+                <p class="text-sm">Providing quality healthcare services to our community. Your health is our priority.
+                </p>
+            </div>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/home" class="hover:text-teal-300">Home</a></li>
+                    <li><a href="/about" class="hover:text-teal-300">About Us</a></li>
+                    <li><a href="/services" class="hover:text-teal-300">Services</a></li>
+                    <li><a href="/appointment" class="hover:text-teal-300">Get Appointment</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Contact</a></li>
+                </ul>
+            </div>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Services</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-teal-300">Emergency Care</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Laboratory</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Pediatrics</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Cardiology</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Neurology</a></li>
+                </ul>
+            </div>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                <p class="mb-2"><ion-icon name="location-outline" class="inline-block mr-2"></ion-icon> 123 Health
+                    Street, Medical City, 12345</p>
+                <p class="mb-2"><ion-icon name="call-outline" class="inline-block mr-2"></ion-icon> (123) 456-7890</p>
+                <p class="mb-2"><ion-icon name="mail-outline" class="inline-block mr-2"></ion-icon> info@healthify.com
+                </p>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-linkedin"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        <div class="w-10/12 mx-auto border-t border-teal-700 mt-8 pt-8 text-center">
+            <p>&copy; 2023 Healthify. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

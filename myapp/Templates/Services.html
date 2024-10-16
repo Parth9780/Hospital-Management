@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthify Hospital a Good Tretment and Services Provide Get Visit and Book Your Family Health</title>
+    <link rel="icon" type="image/x-icon" href="/static/image/Favicon.png" />
+    <!-- Tailwind-CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- icons CDN -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <section>
+        <header class="bg-teal-900 p-6">
+            <nav class="flex justify-between items-center w-[92%] mx-auto">
+                <div class="text-white">
+                    <h1 class="md:text-4xl text-3xl font-semibold font-serif">Healthify</h1>
+                </div>
+                <div
+                    class="nav-links duration-500 md:static absolute bg-teal-900 md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-6">
+                    <ul class="text-white md:items-center text-xl flex md:gap-12 gap-8 md:flex-row flex-col font-sans">
+                        <li><a class="hover:text-slate-400 hover:underline" href="/home">Home</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="/about">About</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="#">Services</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="/appointment">Appointment</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex item-center gap-6">
+                    <div class="relative group">
+                        <button class="text-white text-lg ps-1 flex items-center">
+                            <ion-icon name="person-sharp" class="text-white mr-2"></ion-icon>
+                            {{ username }} !
+                            <ion-icon name="chevron-down-outline" class="text-white ml-1"></ion-icon>
+                        </button>
+                        <ul
+                            class="absolute right-0 top-full mt-2 w-48 bg-teal-800 rounded-md shadow-lg hidden group-hover:block">
+                            <li><a href="/update-profile"
+                                    class="block px-4 py-2 text-sm text-white hover:bg-teal-700">Update Profile</a></li>
+                            <li><a href="/logout"
+                                    class="block px-4 py-2 text-sm text-white hover:bg-teal-700">Logout</a></li>
+                        </ul>
+                    </div>
+                    <ion-icon onclick="ontoggleMenu(this)" name="menu-outline"
+                        class="text-3xl text-white cursor-pointer md:hidden"></ion-icon>
+                </div>
+            </nav>
+        </header>
+        <script>
+            const navLinks = document.querySelector('.nav-links')
+            function ontoggleMenu(e) {
+                e.name = e.name === 'close' ? 'menu' : 'close'
+                navLinks.classList.toggle('top-[10%]')
+            }
+        </script>
+    </section>
+    <!-- Hospital Treatment Section -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-teal-900 mb-12">Hospital Treatments</h2>
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Treatment 1 -->
+                <div class="flex flex-col items-center text-center max-w-xs">
+                    <ion-icon name="medical" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-xl font-semibold text-teal-900 mb-2">General Surgery</h3>
+                    <p class="text-gray-600">Wide range of procedures, from appendectomies to complex surgeries.</p>
+                </div>
+
+                <!-- Treatment 2 -->
+                <div class="flex flex-col items-center text-center max-w-xs">
+                    <ion-icon name="pulse" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-xl font-semibold text-teal-900 mb-2">Cardiac Care</h3>
+                    <p class="text-gray-600">Advanced cardiac treatments including angioplasty and bypass surgery.</p>
+                </div>
+
+                <!-- Treatment 3 -->
+                <div class="flex flex-col items-center text-center max-w-xs">
+                    <ion-icon name="woman" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-xl font-semibold text-teal-900 mb-2">Obstetrics & Gynecology</h3>
+                    <p class="text-gray-600">Comprehensive care for women, including prenatal and delivery services.</p>
+                </div>
+
+                <!-- Treatment 4 -->
+                <div class="flex flex-col items-center text-center max-w-xs">
+                    <ion-icon name="body" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-xl font-semibold text-teal-900 mb-2">Orthopedic Surgery</h3>
+                    <p class="text-gray-600">Treatments for bone and joint conditions, including joint replacements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-teal-900 mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300">
+                    <ion-icon name="heart" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-2xl font-semibold text-teal-900 mb-2">Cardiology</h3>
+                    <p class="text-gray-600">Comprehensive heart care services including diagnostics, treatment, and
+                        prevention.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300">
+                    <ion-icon name="fitness" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-2xl font-semibold text-teal-900 mb-2">Orthopedics</h3>
+                    <p class="text-gray-600">Expert care for bone and joint issues, including surgeries and
+                        rehabilitation.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300">
+                    <ion-icon name="nutrition" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-2xl font-semibold text-teal-900 mb-2">Nutrition Counseling</h3>
+                    <p class="text-gray-600">Personalized dietary advice and meal planning for optimal health.</p>
+                </div>
+
+                <!-- Add more service cards as needed -->
+            </div>
+        </div>
+    </section>
+    <!-- Hospital Available Facilities Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-teal-900 mb-12">Available Facilities</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Facility 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <ion-icon name="bed-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-lg font-semibold text-teal-900">ICU</h3>
+                </div>
+
+                <!-- Facility 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <ion-icon name="flask-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-lg font-semibold text-teal-900">Laboratory</h3>
+                </div>
+
+                <!-- Facility 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <ion-icon name="scan-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-lg font-semibold text-teal-900">X-Ray & Imaging</h3>
+                </div>
+
+                <!-- Facility 4 -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <ion-icon name="fitness-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-lg font-semibold text-teal-900">Physiotherapy</h3>
+                </div>
+
+                <!-- Facility 5 -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <ion-icon name="car-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-lg font-semibold text-teal-900">Ambulance Service</h3>
+                </div>
+
+                <!-- Facility 6 -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <ion-icon name="medkit-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-lg font-semibold text-teal-900">Emergency Care</h3>
+                </div>
+
+                <!-- Facility 7 -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <ion-icon name="restaurant-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-lg font-semibold text-teal-900">Cafeteria</h3>
+                </div>
+
+                <!-- Facility 8 -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+                    <ion-icon name="wifi-outline" class="text-5xl text-teal-600 mb-4"></ion-icon>
+                    <h3 class="text-lg font-semibold text-teal-900">Free Wi-Fi</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/+917600472916" target="_blank"
+        class="fixed right-4 bottom-4 z-50 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 transition duration-300">
+        <ion-icon name="logo-whatsapp" class="text-3xl"></ion-icon>
+    </a>
+    <!-- Footer Section -->
+    <footer class="bg-teal-900 text-white py-10">
+        <div class="w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Healthify</h2>
+                <p class="text-sm">Providing quality healthcare services to our community. Your health is our priority.
+                </p>
+            </div>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/home" class="hover:text-teal-300">Home</a></li>
+                    <li><a href="/about" class="hover:text-teal-300">About Us</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Services</a></li>
+                    <li><a href="/appointment" class="hover:text-teal-300">Get Appointment</a></li>
+                    <li><a href="/contact" class="hover:text-teal-300">Contact</a></li>
+                </ul>
+            </div>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Services</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-teal-300">Emergency Care</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Laboratory</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Pediatrics</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Cardiology</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Neurology</a></li>
+                </ul>
+            </div>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                <p class="mb-2"><ion-icon name="location-outline" class="inline-block mr-2"></ion-icon> 123 Health
+                    Street, Medical City, 12345</p>
+                <p class="mb-2"><ion-icon name="call-outline" class="inline-block mr-2"></ion-icon> (123) 456-7890</p>
+                <p class="mb-2"><ion-icon name="mail-outline" class="inline-block mr-2"></ion-icon> info@healthify.com
+                </p>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-linkedin"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        <div class="w-10/12 mx-auto border-t border-teal-700 mt-8 pt-8 text-center">
+            <p>&copy; 2023 Healthify. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

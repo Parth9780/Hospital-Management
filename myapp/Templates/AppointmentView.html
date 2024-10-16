@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthify Hospital a Good Tretment and Services Provide Get Visit and Book Your Family Health</title>
+    <link rel="icon" type="image/x-icon" href="/static/image/Favicon.png" />
+    <!-- Tailwind-CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- icons CDN -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-5">
+        <h1 class="text-2xl font-bold mb-4 text-center">Appointment View Table</h1>
+        <hr class="w-10/12 mx-auto">
+        <table align="center">
+            <tr>
+                <th class="px-4 py-2">Name</th>
+                <th class="px-4 py-2">Email</th>
+                <th class="px-4 py-2">Phone</th>
+                <th class="px-4 py-2">Date</th>
+                <th class="px-4 py-2">Time</th>
+                <th class="px-4 py-2">Department</th>
+                <th class="px-4 py-2">Message</th>
+                <th class="px-4 py-2">Action</th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td class="p-4">{{ i.name }}</td>
+                <td class="p-4">{{ i.email }}</td>
+                <td class="p-4">{{ i.phone }}</td>
+                <td class="p-4">{{ i.date }}</td>
+                <td class="p-4">{{ i.time }}</td>
+                <td class="p-4">{{ i.department }}</td>
+                <td class="p-4">{{ i.message }}</td>
+                <td class="p-4 flex space-x-4">
+                    <a href="/deletedata/{{i.id}}" title="Edit">
+                        <ion-icon name="create-outline" class="text-blue-500"></ion-icon>
+                    </a>
+                    <a href="/UpdateAppointment/{{i.id}}" title="Delete">
+                        <ion-icon name="trash-outline" class="text-red-500"></ion-icon>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</body>
+
+</html>

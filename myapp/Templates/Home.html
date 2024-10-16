@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthify Hospital a Good Tretment and Services Provide Get Visit and Book Your Family Health</title>
+    <link rel="icon" type="image/x-icon" href="/static/image/Favicon.png" />
+    <!-- Tailwind-CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- icons CDN -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <section>
+        <header class="bg-teal-900 p-6">
+            <nav class="flex justify-between items-center w-[92%] mx-auto">
+                <div class="text-white">
+                    <h1 class="md:text-4xl text-3xl font-semibold font-serif">Healthify</h1>
+                </div>
+                <div
+                    class="nav-links duration-500 md:static absolute bg-teal-900 md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-6">
+                    <ul class="text-white md:items-center text-xl flex md:gap-12 gap-8 md:flex-row flex-col font-sans">
+                        <li><a class="hover:text-slate-400 hover:underline" href="#">Home</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="/about">About</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="/services">Services</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="/appointment">Appointment</a></li>
+                        <li><a class="hover:text-slate-400 hover:underline" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex item-center gap-6">
+                    <div class="relative group py-2">
+                        <button class="text-white text-lg ps-1 flex items-center">
+                            <ion-icon name="person-sharp" class="text-white mr-2"></ion-icon>
+                            {{ username }}!
+                            <ion-icon name="chevron-down-outline" class="text-white ml-1"></ion-icon>
+                        </button>
+                        <ul
+                            class="absolute right-0 top-full mt-2 w-48 bg-teal-800 rounded-md shadow-lg hidden group-hover:block">
+                            <li><a href="/updateProfile"
+                                    class="block px-4 py-2 text-sm text-white hover:bg-teal-700">Update Profile</a></li>
+                            <li><a href="/logout"
+                                    class="block px-4 py-2 text-sm text-white hover:bg-teal-700">Logout</a></li>
+                        </ul>
+                    </div>
+                    <ion-icon onclick="ontoggleMenu(this)" name="menu-outline"
+                        class="text-3xl text-white cursor-pointer md:hidden"></ion-icon>
+                </div>
+            </nav>
+        </header>
+        <script>
+            const navLinks = document.querySelector('.nav-links')
+            function ontoggleMenu(e) {
+                e.name = e.name === 'close' ? 'menu' : 'close'
+                navLinks.classList.toggle('top-[10%]')
+            }
+        </script>
+    </section>
+    <!-- Main Hero Section -->
+    <section class="bg-teal-700">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="ps-12 py-12 text-white">
+                <p class="text-4xl lg:text-5xl font-bold font-serif lg:leading-tight text-start">Providing appropritate
+                    health care for
+                    seniors and
+                    childrens</p>
+                <p class="text-md lg:text-xl text-start font-sans font-light py-2 lg:py-5">Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Consequuntur ullam nulla non voluptates dolorum similique repellendus
+                    fugit in laborum molestiae, sunt veritatis est ex commodi sapiente amet accusantium rem quisquam.
+                </p>
+                <div>
+                    <button
+                        class="me-5 my-5 lg:my-7 px-16 py-3 bg-white text-lg text-teal-700 hover:text-gray-800 transition duration-300 delay-150 font-semibold">About
+                        Me</button>
+                    <button
+                        class="px-10 py-3 hover:bg-white text-lg hover:text-teal-700 font-semibold bg-gray-700 text-white transition duration-300 delay-150">Get
+                        Appointment</button>
+                </div>
+            </div>
+            <div>
+                <div class="lg:block hidden">
+                    <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page287/newlife/assets/images/img-1.png"
+                        class="lg:ps-10" style="height: 650px; width: 100%;" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <section class="w-10/12 mx-auto bg-white">
+        <div class="font-medium text-teal-700 py-10">
+            <h1 class="text-3xl px-7">About Healthify</h1>
+            <p class="border-2 border-gray-700 w-24 mx-7 mt-2"></p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="px-7">
+                <div class="py-3">
+                    <h1 class="text-teal-800 font-semibold text-3xl font-sans">The Highest provide health care</h1>
+                    <p class="pt-4 pe-5 text-lg font-light text-gray-600 line-clamp-6 lg:line-clamp-none">Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Aspernatur sequi, expedita aperiam nobis cum vitae
+                        sunt ducimus assumenda dolorum veritatis minus asperiores sapiente, fugiat fugit placeat sit
+                        explicabo voluptatibus fuga?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quia
+                        necessitatibus eum, earum sunt dignissimos fugit consequuntur, vero totam dolores quos neque
+                        sapiente similique. Quis tempore nostrum voluptatibus aliquam temporibus!</p>
+                    <button class="px-5 py-3 bg-teal-700 text-lg text-white my-6">Read More</button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page287/newlife/assets/images/img-2.png"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Finest Patient Section -->
+    <section class="py-24 bg-gray-700">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="w-full">
+                <div class="px-2 lg:px-12">
+                    <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page287/newlife/assets/images/img-3.png"
+                        style="height: 550px;" alt="">
+                </div>
+            </div>
+            <div class="ps-16 pe-2 pt-14 lg:ps-0 lg:pe-56 lg:pt-24">
+                <div class="text-start lg:text-end text-white">
+                    <h3 class="text-xl">Finest Patient</h3>
+                    <h1 class="py-4 text-3xl font-bold">Care & Amenities</h1>
+                    <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas minima
+                        architecto commodi mollitia nulla, ea sed rem officia. Delectus unde vel ab neque quos? Optio
+                        dolorem iste asperiores soluta minus! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Dolore sit tenetur illum sint, distinctio ratione doloribus. Repudiandae rerum fugiat suscipit
+                        doloremque, iste eos porro eaque nam error nemo dolore odio!</p>
+                    <button class="px-5 py-3 bg-green-600 text-lg text-white my-6">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Card Section -->
+    <section class="w-10/12 mx-auto bg-white py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div
+                class="bg-gray-700 text-center text-white item-center justify-center p-10 hover:bg-teal-600 duration-500">
+                <div class="text-center py-3">
+                    <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page287/newlife/assets/images/call-icon.png"
+                        class="mx-auto" alt="">
+                </div>
+                <h3 class="text-3xl">Emergency Cases</h3>
+                <h2 class="text-3xl py-7 font-bold">1-800-400-5768</h2>
+                <p class="text-lg px-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+            </div>
+            <div class="bg-teal-600 text-center text-white item-center justify-center p-10">
+                <div class="text-center py-3">
+                    <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page287/newlife/assets/images/time-seat-icon.png"
+                        class="mx-auto" alt="">
+                </div>
+                <h3 class="text-3xl">Doctors timetable</h3>
+                <h2 class="text-3xl py-7 font-bold">1-800-400-5768</h2>
+                <p class="text-lg px-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+            </div>
+            <div
+                class="bg-gray-700 text-center text-white item-center justify-center p-10 hover:bg-teal-600 duration-500">
+                <div class="text-center py-3">
+                    <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page287/newlife/assets/images/watch-icon.png"
+                        class="mx-auto" alt="">
+                </div>
+                <h3 class="text-3xl">Opening hours</h3>
+                <h2 class="text-3xl py-7 font-bold">1-800-400-5768</h2>
+                <p class="text-lg px-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+            </div>
+        </div>
+    </section>
+    <!-- Best Laboratory Section -->
+    <section class="w-10/12 mx-auto bg-white">
+        <div class="font-medium text-teal-700 py-4">
+            <h1 class="text-3xl">Best Laboratory</h1>
+            <!-- <p class="border-2 border-gray-700 w-16 mt-2"></p> -->
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="">
+                <div class="py-4">
+                    <h1 class="text-teal-800 font-semibold text-2xl font-sans">Tests Available</h1>
+                    <p class="pt-4 pe-5 text-lg font-light text-gray-600 line-clamp-6 lg:line-clamp-none">Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Aspernatur sequi, expedita aperiam nobis cum vitae
+                        sunt ducimus assumenda dolorum veritatis minus asperiores sapiente, fugiat fugit placeat sit
+                        explicabo voluptatibus fuga?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quia
+                        necessitatibus eum, earum sunt dignissimos fugit consequuntur, vero totam dolores quos neque
+                        sapiente similique. Quis tempore nostrum voluptatibus aliquam temporibus!</p>
+                    <button class="px-5 py-3 bg-teal-700 text-lg text-white my-6">Read More</button>
+                </div>
+            </div>
+            <div class="pt-0">
+                <div>
+                    <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page287/newlife/assets/images/img-4.png"
+                        style="height: 450px;" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Doctor Slider -->
+    <!-- ... existing code ... -->
+
+    <!-- Doctor Slider -->
+    <section class="w-10/12 mx-auto bg-white py-10" style="overflow-x: hidden;">
+        <div class="font-medium text-teal-700 pb-6">
+            <h1 class="text-3xl">Our Doctors</h1>
+            <p class="border-2 border-gray-700 w-16 mt-2"></p>
+        </div>
+        <div class="relative">
+            <div id="doctorSlider" class="flex transition-transform duration-300 ease-in-out">
+                <!-- Doctor cards will be dynamically added here -->
+            </div>
+            <button id="prevBtn"
+                class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-teal-700 text-white px-3 py-2 rounded-r">&#10094;</button>
+            <button id="nextBtn"
+                class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-teal-700 text-white px-3 py-2 rounded-l">&#10095;</button>
+        </div>
+    </section>
+
+    <script>
+        // Doctor data
+        const doctors = [
+            { name: "Dr. John Doe", specialty: "Cardiologist", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page293/mico/assets/images/team3.jpg" },
+            { name: "Dr. Jane Smith", specialty: "Neurologist", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page293/mico/assets/images/team1.jpg" },
+            { name: "Dr. Mike Johnson", specialty: "Pediatrician", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page270/one-health/assets/img/doctors/doctor_2.jpg" },
+            { name: "Dr. Emily Brown", specialty: "Dermatologist", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page270/one-health/assets/img/doctors/doctor_3.jpg" },
+            { name: "Dr. Stein Albert", specialty: "Orthopedist", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page270/one-health/assets/img/doctors/doctor_1.jpg" },
+            { name: "Dr. John Doe", specialty: "Cardiologist", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page293/mico/assets/images/team3.jpg" },
+            { name: "Dr. Jane Smith", specialty: "Neurologist", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page293/mico/assets/images/team1.jpg" },
+            { name: "Dr. Mike Johnson", specialty: "Pediatrician", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page270/one-health/assets/img/doctors/doctor_2.jpg" },
+            { name: "Dr. Emily Brown", specialty: "Dermatologist", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page270/one-health/assets/img/doctors/doctor_3.jpg" },
+            { name: "Dr. Stein Albert", specialty: "Orthopedist", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page270/one-health/assets/img/doctors/doctor_1.jpg" },
+            { name: "Dr. John Doe", specialty: "Cardiologist", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page293/mico/assets/images/team3.jpg" },
+            { name: "Dr. Jane Smith", specialty: "Neurologist", image: "https://www.free-css.com/assets/files/free-css-templates/preview/page293/mico/assets/images/team1.jpg" },
+        ];
+
+        // Populate doctor cards
+        const slider = document.getElementById('doctorSlider');
+        doctors.forEach(doctor => {
+            const card = document.createElement('div');
+            card.className = 'doctor-card w-64 p-4 m-2 bg-gray-100 rounded-lg shadow-md flex-shrink-0';
+            card.innerHTML = `
+                <img src="${doctor.image}" alt="${doctor.name}" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-semibold">${doctor.name}</h3>
+                <p class="text-gray-600">${doctor.specialty}</p>
+            `;
+            slider.appendChild(card);
+        });
+
+        // Slider functionality
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentPosition = 0;
+
+        nextBtn.addEventListener('click', () => {
+            if (currentPosition > -((doctors.length - 3) * 272)) {
+                currentPosition -= 272;
+                slider.style.transform = `translateX(${currentPosition}px)`;
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentPosition < 0) {
+                currentPosition += 272;
+                slider.style.transform = `translateX(${currentPosition}px)`;
+            }
+        });
+    </script>
+    <!-- Testimonial Slider -->
+    <section class="w-10/12 mx-auto bg-white py-10" style="overflow-x: hidden;">
+        <div class="font-medium text-teal-700 pb-6">
+            <h1 class="text-3xl">Patient Testimonials</h1>
+            <p class="border-2 border-gray-700 w-16 mt-2"></p>
+        </div>
+        <div class="relative">
+            <div id="testimonialSlider" class="flex transition-transform duration-300 ease-in-out">
+                <!-- Testimonial cards will be dynamically added here -->
+            </div>
+            <button id="prevTestimonialBtn"
+                class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-teal-700 text-white px-3 py-2 rounded-r">&#10094;</button>
+            <button id="nextTestimonialBtn"
+                class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-teal-700 text-white px-3 py-2 rounded-l">&#10095;</button>
+        </div>
+    </section>
+
+    <script>
+        // Testimonial data
+        const testimonials = [
+            { name: "John Smith", text: "Excellent care and attention from all staff. I highly recommend this hospital.", image: "https://randomuser.me/api/portraits/men/1.jpg" },
+            { name: "Sarah Johnson", text: "The doctors here are top-notch. They really took the time to listen to my concerns.", image: "https://randomuser.me/api/portraits/women/2.jpg" },
+            { name: "Michael Brown", text: "State-of-the-art facilities and a caring atmosphere. I felt well taken care of.", image: "https://randomuser.me/api/portraits/men/3.jpg" },
+            { name: "Emily Davis", text: "The staff went above and beyond to make my stay comfortable. Thank you!", image: "https://randomuser.me/api/portraits/women/4.jpg" },
+            { name: "Robert Wilson", text: "I was impressed by the efficiency and professionalism of everyone I encountered.", image: "https://randomuser.me/api/portraits/men/5.jpg" },
+        ];
+
+        // Populate testimonial cards
+        const testimonialSlider = document.getElementById('testimonialSlider');
+        testimonials.forEach(testimonial => {
+            const card = document.createElement('div');
+            card.className = 'testimonial-card w-96 p-6 m-2 bg-gray-100 rounded-lg shadow-md flex-shrink-0';
+            card.innerHTML = `
+            <div class="flex items-center mb-4">
+                <img src="${testimonial.image}" alt="${testimonial.name}" class="w-16 h-16 rounded-full mr-4">
+                <h3 class="text-xl font-semibold">${testimonial.name}</h3>
+            </div>
+            <p class="text-gray-600 italic">"${testimonial.text}"</p>
+        `;
+            testimonialSlider.appendChild(card);
+        });
+
+        // Testimonial slider functionality
+        const prevTestimonialBtn = document.getElementById('prevTestimonialBtn');
+        const nextTestimonialBtn = document.getElementById('nextTestimonialBtn');
+        let currentTestimonialPosition = 0;
+
+        nextTestimonialBtn.addEventListener('click', () => {
+            if (currentTestimonialPosition > -((testimonials.length - 1) * 400)) {
+                currentTestimonialPosition -= 400;
+                testimonialSlider.style.transform = `translateX(${currentTestimonialPosition}px)`;
+            }
+        });
+
+        prevTestimonialBtn.addEventListener('click', () => {
+            if (currentTestimonialPosition < 0) {
+                currentTestimonialPosition += 400;
+                testimonialSlider.style.transform = `translateX(${currentTestimonialPosition}px)`;
+            }
+        });
+    </script>
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/+917600472916" target="_blank"
+        class="fixed right-4 bottom-4 z-50 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 transition duration-300">
+        <ion-icon name="logo-whatsapp" class="text-3xl"></ion-icon>
+    </a>
+    <!-- Footer Section -->
+    <footer class="bg-teal-900 text-white py-10">
+        <div class="w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Healthify</h2>
+                <p class="text-sm">Providing quality healthcare services to our community. Your health is our priority.
+                </p>
+            </div>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-teal-300">Home</a></li>
+                    <li><a href="/about" class="hover:text-teal-300">About Us</a></li>
+                    <li><a href="/services" class="hover:text-teal-300">Services</a></li>
+                    <li><a href="/appointment" class="hover:text-teal-300">Get Appointment</a></li>
+                    <li><a href="/contact" class="hover:text-teal-300">Contact</a></li>
+                </ul>
+            </div>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Services</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-teal-300">Emergency Care</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Laboratory</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Pediatrics</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Cardiology</a></li>
+                    <li><a href="#" class="hover:text-teal-300">Neurology</a></li>
+                </ul>
+            </div>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                <p class="mb-2"><ion-icon name="location-outline" class="inline-block mr-2"></ion-icon> 123 Health
+                    Street, Medical City, 12345</p>
+                <p class="mb-2"><ion-icon name="call-outline" class="inline-block mr-2"></ion-icon> (123) 456-7890</p>
+                <p class="mb-2"><ion-icon name="mail-outline" class="inline-block mr-2"></ion-icon> info@healthify.com
+                </p>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#" class="text-2xl hover:text-teal-300"><ion-icon name="logo-linkedin"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        <div class="w-10/12 mx-auto border-t border-teal-700 mt-8 pt-8 text-center">
+            <p>&copy; 2023 Healthify. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
